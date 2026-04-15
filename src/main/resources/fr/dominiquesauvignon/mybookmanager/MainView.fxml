@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.dominiquesauvignon.mybookmanager.controller.MainViewController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   
+   <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Gestion de Livres" />
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="par Dominique SAUVIGNON" />
+   
+   <!-- Formulaire dans une GridPane pour l'alignement -->
+   <GridPane hgap="10.0" vgap="10.0">
+      <columnConstraints>
+         <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+         <ColumnConstraints minWidth="200.0" />
+      </columnConstraints>
+      
+      <Label text="Titre :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+      <TextField fx:id="champTitre" promptText="Titre du livre" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      
+      <Label text="Auteur :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      <TextField fx:id="champAuteur" promptText="Nom de l'auteur" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      
+      <Label text="Année :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+      <TextField fx:id="champAnnee" promptText="Ex: 2024" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+   </GridPane>
+
+   <HBox alignment="CENTER" spacing="10.0">
+      <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#handleAjouter" text="Ajouter le livre" />
+   </HBox>
+
+   <Label text="Liste des livres :" />
+   <ListView fx:id="listeLivres" prefHeight="121.0" prefWidth="310.0" VBox.vgrow="ALWAYS" />
+   
+</VBox>
